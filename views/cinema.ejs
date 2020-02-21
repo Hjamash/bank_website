@@ -1,0 +1,92 @@
+<% include ./partials/header %> 
+<style>
+    /* .poster {
+      position: relative;
+      width: 50%;
+    } */
+    
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .6s ease;
+      background-color: black;
+    }
+    
+    .poster:hover .overlay {
+      opacity: 0.88;
+    }
+    
+    .text {
+      /* color: white; */
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    body{
+        background: black;
+    }
+    .jumbotron { 
+  /* The image used */
+  background-image: url("http://i.dawn.com/large/2015/09/55fe7039d5375.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbo>h1,.jumbo>p {
+    color: white;
+}
+    </style>
+
+<div class="container-fluid">
+     <header class="jumbotron" style="margin-top: 10px;">
+         <div class="container jumbo">
+             <h1>Welcome To CinemaCity</h1>
+             <p>Watch the latest movies on the biggest screens!</p>
+             <!-- <p>
+                <a class="btn btn-primary btn-lg" href="">Add New Campground</a>
+             </p> -->
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% movie.forEach(function(movie){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail poster">
+                   <img class="image" src="<%= movie.image %>">
+                   <div class="overlay">
+                       <a href="/buyTickets/<%= currentUser._id %>/pay/<%= movie._id %>"><button type="button" class="text btn btn-warning">Book Now</button></a>
+                  </div>
+                   <div class="caption">
+                    <h4><b><%= movie.name %></b></h4>
+                       <h5>Genre: <%= movie.genre %></h5>
+                   </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ./partials/footer %>

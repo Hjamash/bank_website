@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+<style>
+body{
+    background: black;
+}
+* {
+    color: rgb(219, 45, 45);
+}
+
+
+.nav, .navbar-nav, .navbar, .listItems{
+    background: rgb(158, 52, 52);
+}
+</style>
+<div class="container" style="width:30%; margin:20px auto; color: black;">
+        <h3>Ticket Payment:</h3>
+    <form action="/buyTickets/<%= currentUser._id %>/pay/<%= Ticket._id %>" method="POST">
+        <div class="form-group">
+                <h4>
+                  Movie Name: <%= Ticket.name %>
+                </h4>
+                </div>
+    <div class="form-group">
+        <label>Select Scheduel:
+        </label>
+            <select class="form-control scheduel" name="scheduelId">
+                    <% Ticket.scheduel.forEach(function(scheduel){ %>
+            <option id="scheduel" value="<%= scheduel._id %>"><%= scheduel.date %> <%= scheduel.time %></option>
+            <% }); %> 
+        </select>
+    <% Ticket.scheduel.forEach(function(scheduel){ %>
+        <h4>
+            Avaliable seats: <%= scheduel.seatsAvaliable %> <b>for</b> <%= scheduel.date %> <%= scheduel.time %> 
+        </h4>
+        <% }); %>
+    </div>
+    <div class="form-group">
+        <label>No of Seats:
+        </label>
+        <input name="quantity" type="Number" class="form-control" min="1" required>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-md btn-block" type="submit" style="color: white;background: rgb(219, 45, 45); width: 20%;">Pay</button>
+    </div>
+</form>
+</div>
+<% include ./partials/footer %>

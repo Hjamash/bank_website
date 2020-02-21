@@ -1,0 +1,34 @@
+{
+  "name": "bank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "delay": "^4.1.0",
+    "ejs": "^2.6.1",
+    "email-validator": "^2.0.4",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "forever-monitor": "^1.7.1",
+    "init": "^0.1.2",
+    "jsdom": "^13.0.0",
+    "json": "^9.0.6",
+    "mongoose": "^5.2.17",
+    "mongoose-extract-duplicate-field": "^1.3.0",
+    "mongoose-schema-formatdate": "^1.0.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "passport-session": "^1.0.2",
+    "random-date-generator": "^1.0.2",
+    "session": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jamash",
+  "license": "ISC"
+}

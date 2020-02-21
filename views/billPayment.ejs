@@ -1,0 +1,32 @@
+<% include ./partials/header.ejs %>
+<div class="container">
+<h4>Billing:</h4>
+<table>
+    <tr>
+      <th>Index</th>
+      <th>Title</th>
+      <th>Due</th>
+      <th>Due Date</th>
+      <th>Status</th>
+    </tr>
+    
+    <% var i=1 %>
+    <% custInfo.bills.forEach(function(bill){ %>
+    <tr>
+    <form action="/billPayment/<%= custInfo._id %>/pay/<%= bill._id %>" method="POST">    
+        <td><%= i++ %></td>  
+        <td name="title"><%= bill.title %></td>
+        <td><%= bill.amount  %></td>
+        <td><%= bill.dueDate %></td>
+        <% if(bill.paid == true){ %>
+          <td>Paid</td>
+          <% } else { %>
+            <td>Due</td>
+        <% } %>
+        <td><button type="Submit" class="btn btn-primary btn-sm btn-block">Pay</button></td>
+     </form>  
+    </tr>
+    <% }) %>
+  </table>
+</div>
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,59 @@
+body{
+    /* background-image: url("https://autumn.care/wp-content/uploads/2018/04/Red-background-for-website.jpg"); */
+    background: lightgoldenrodyellow;
+    color: ghostwhite;
+}
+
+.navbar{
+    background-color: #5cb85c;
+    border-color: #4cae4c; 
+}
+
+.navbar-default .nav>li>a{
+    color: ghostwhite;
+}
+
+.navbar-default .navbar-brand {
+    color: ghostwhite;
+}
+
+
+table, th, td {
+    border: 1px solid #4cae4c;
+    border-collapse: collapse;    
+}
+
+table{
+    width: 100%;
+}
+
+th,td{
+    padding: 5px;
+}
+
+th{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;    
+    font-weight: 400; 
+}
+
+td{
+    color: black;
+}
+
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table tr:nth-child(odd) {
+   background-color: #b7deb7;
+}
+
+*{
+    color: black;
+}
+
+ul{
+    font-size: medium;
+}
